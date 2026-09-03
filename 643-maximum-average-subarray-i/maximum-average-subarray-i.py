@@ -1,5 +1,6 @@
 class Solution(object):
     def findMaxAverage(self, nums, k):
+    
         window = 0
         i = 0
 
