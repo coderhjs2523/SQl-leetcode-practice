@@ -9,19 +9,29 @@ class Solution(object):
 
             if s[i] in Set:
 
-                length = i - j
-                maxlength = max(maxlength, length)
-
-                while s[j] != s[i]:
+                while s[i] in Set:
                     Set.remove(s[j])
                     j += 1
-
-                Set.remove(s[j])
-                j += 1
-
+            
             Set.add(s[i])
+            maxlength = max(maxlength, i-j+1)
+        return maxlength
 
-        length = len(s) - j
-        maxlength = max(maxlength, length)
+        #     if s[i] in Set:
+
+        #         length = i - j
+        #         maxlength = max(maxlength, length)
+
+        #         while s[j] != s[i]:
+        #             Set.remove(s[j])
+        #             j += 1
+
+        #         Set.remove(s[j])
+        #         j += 1
+
+        #     Set.add(s[i])
+
+        # length = len(s) - j
+        # maxlength = max(maxlength, length)
 
         return maxlength
