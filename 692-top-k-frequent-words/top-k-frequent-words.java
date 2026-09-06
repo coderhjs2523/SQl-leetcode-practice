@@ -21,7 +21,7 @@ class Solution {
                     temp = key;
                 }
                 else if (currentFreq == maxfreq) {
-                    if (temp.isEmpty() || key.compareTo(temp) < 0) {
+                    if (key.compareTo(temp) < 0) {
                         temp = key;
                     }
                 }
