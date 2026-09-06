@@ -15,7 +15,7 @@ class Solution {
             int maxfreq = -1;
             int fill = -1;
             for (int key : map.keySet()) {
-                if (map.get(key) >= maxfreq) {
+                if (map.get(key) > maxfreq) {
                     maxfreq = map.get(key);
                     fill = key;
                 }
