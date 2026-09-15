@@ -11,7 +11,7 @@ class Solution {
             ans = Math.min(ans, prefix_sum[i]);
         }
 
-        if (ans <= 0)
+        if (ans < 0)
             return Math.abs(ans) + 1;
 
         return 1;
