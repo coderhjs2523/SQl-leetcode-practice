@@ -14,11 +14,10 @@ class Solution(object):
                 map[s[i]] = 1
 
             if i-j+1 == 3:
-                if len(map.keys()) == 3:
+                if len(map) == 3:
                     ans += 1
 
-                if s[j] in map:
-                    map[s[j]] -= 1    
+                map[s[j]] -= 1    
 
                 if map[s[j]] == 0:
                     del map[s[j]]
