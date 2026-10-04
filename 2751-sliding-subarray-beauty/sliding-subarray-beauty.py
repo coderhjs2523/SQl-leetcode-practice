@@ -1,33 +1,32 @@
 class Solution(object):
     def getSubarrayBeauty(self, nums, k, x):
 
+        freq = [0] * 101
         ans = []
         l = 0
 
-        freq = [0] * 101
-
         for r in range(len(nums)):
-
             freq[nums[r] + 50] += 1
 
-            if r - l + 1 == k:
-
+            if (r-l+1) == k:
                 count = 0
 
-                for i in range(50):   # -50 to -1
-
+                for i in range(50):
                     count += freq[i]
 
                     if count >= x:
-                        ans.append(i - 50)
+                        value = i - 50
+                        ans.append(value)
                         break
                 else:
                     ans.append(0)
-
+                
                 freq[nums[l] + 50] -= 1
                 l += 1
 
         return ans
+                    
+
 
 
 # class Solution(object):
