@@ -22,8 +22,7 @@ class Solution(object):
                 
                 sum -= nums[l]
 
-                if nums[l] in map:
-                    map[nums[l]] -= 1
+                map[nums[l]] -= 1
 
                 if map[nums[l]] == 0:
                     del(map[nums[l]])
