@@ -1,5 +1,3 @@
-SELECT e.name AS Employee
-FROM Employee e
-JOIN Employee m 
-  ON e.managerId = m.id
-WHERE e.salary > m.salary;
+SELECT E1.name AS Employee
+FROM Employee E1
+INNER JOIN Employee E2 ON E1.managerId = E2.id AND E1.salary > E2.salary;
