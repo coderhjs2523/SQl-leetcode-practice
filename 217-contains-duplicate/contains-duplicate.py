@@ -1,12 +1,9 @@
 class Solution(object):
     def containsDuplicate(self, nums):
-        
-        map = {}
+        check = set()
 
         for ele in nums:
-            if ele in map:
+            if ele in check:
                 return True
-            else:
-                map[ele] = 1
+            check.add(ele)
         return False
-        
