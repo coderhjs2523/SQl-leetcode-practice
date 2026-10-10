@@ -8,8 +8,7 @@ class Solution(object):
                 map[ele] += 1
             else:
                 map[ele] = 1
-        
-        for ele in map.keys():
-            if map[ele] > len(nums)/2:
-                return ele
-        
+
+        for key in map.keys():
+            if map[key] > len(nums)/2:
+                return key
