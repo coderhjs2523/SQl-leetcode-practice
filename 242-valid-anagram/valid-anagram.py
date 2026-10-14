@@ -1,28 +1,21 @@
 class Solution(object):
     def isAnagram(self, s, t):
-
-        if len(s) != len(t):
-            return False
         
-        maps = {}
-        mapt = {}
+        map1 = {}
+        map2 = {}
 
         for ele in s:
-            if ele in maps:
-                maps[ele] += 1
+            
+            if ele in map1:
+                map1[ele] += 1
             else:
-                maps[ele] = 1
+                map1[ele] = 1
 
         for ele in t:
-            if ele in mapt:
-                mapt[ele] += 1
+            
+            if ele in map2:
+                map2[ele] += 1
             else:
-                mapt[ele] = 1
-        
-        for ele in maps.keys():
-            if ele not in mapt:
-                return False
-            else:
-                if maps[ele] != mapt[ele]:
-                    return False
-        return True
+                map2[ele] = 1
+
+        return map1 == map2
