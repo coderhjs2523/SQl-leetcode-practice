@@ -1,14 +1,18 @@
 class Solution(object):
     def isPalindrome(self, x):
         
-        if x<0:
+        if x < 0:
             return False
+
+        temp = 0
         copy = x
-        num = 0
-        while x!=0:
-            num = num*10 + x%10
-            x = x/10
-        if copy == num:
+
+        while copy !=0:
+            r = copy % 10
+            temp = temp * 10 + r
+            copy = copy / 10
+
+        if temp == x:
             return True
-        return False
         
+        return False
