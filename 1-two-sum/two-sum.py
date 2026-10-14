@@ -4,7 +4,11 @@ class Solution(object):
         map = {}
 
         for i in range(len(nums)):
-            value = target-nums[i]
-            if value in map.keys():
-                return[i,map[value]]
+
+            find = target - nums[i]
+
+            if find in map:
+                return[map[find], i]
+            
             map[nums[i]] = i
+        
