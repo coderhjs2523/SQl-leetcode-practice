@@ -8,7 +8,8 @@ class Solution(object):
         for i in range(1,len(prices)):
 
             if prices[i] - buy_price > profit:
-                ans = max(ans, prices[i] - buy_price)
+                profit = prices[i] - buy_price
+                ans = max(ans, profit)
 
             buy_price = min(buy_price, prices[i])
 
