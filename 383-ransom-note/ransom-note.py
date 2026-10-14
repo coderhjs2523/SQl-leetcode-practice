@@ -16,8 +16,7 @@ class Solution(object):
                 map2[ele] = 1
         
         for key in map1.keys():
-            if key not in map2.keys():
+            if key not in map2.keys() or map1[key] > map2[key]:
                 return False
-            if map1[key] > map2[key]:
-                return False
+
         return True
