@@ -1,17 +1,24 @@
 class Solution(object):
     def longestCommonPrefix(self, strs):
         
+        ans = strs[0]
         temp = ""
-        prefix = strs[0]
 
-        for i in range(1,len(strs)):
-            s1 = strs[i]
+        for ele in strs:
+
             p1 = 0
             p2 = 0
-            while p1<len(prefix) and p2<len(s1) and s1[p1] == prefix[p2]:
-                temp += s1[p1]
+
+            while p1 < len(ans) and p2 < len(ele):
+
+                if ans[p1] != ele[p2]:
+                   break
+
+                temp += ans[p1]
                 p1 += 1
                 p2 += 1
-            prefix = temp
+
+            ans = temp
             temp = ""
-        return prefix
+
+        return ans
