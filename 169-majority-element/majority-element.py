@@ -4,11 +4,13 @@ class Solution(object):
         map = {}
 
         for ele in nums:
+
             if ele in map:
                 map[ele] += 1
             else:
                 map[ele] = 1
 
-        for key in map.keys():
-            if map[key] > len(nums)/2:
-                return key
+        for ele in map.keys():
+            
+            if map[ele] > len(nums)/2:
+                return ele
