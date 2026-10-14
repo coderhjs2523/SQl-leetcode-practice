@@ -10,8 +10,7 @@ class Solution(object):
             if s[p1] == t[p2]:
                 count -= 1
                 p1 += 1
+            
             p2 += 1
-        
-        return count == 0
 
-        
+        return count == 0
