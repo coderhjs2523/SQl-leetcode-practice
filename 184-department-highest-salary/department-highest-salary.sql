@@ -1,13 +1,11 @@
-SELECT 
-    T.Department,
-    T.Employee,
-    T.salary
-FROM (SELECT 
-    D.name AS Department, 
-    E.name AS Employee, 
-    E.salary,
-    RANK() OVER (PARTITION BY D.name ORDER BY E.salary DESC) AS salary_rank
+SELECT T.Department AS Department, T.Employee AS Employee, T.Salary AS Salary
+FROM(
+    SELECT 
+    E.name AS Employee,
+    D.name AS Department,
+    E.salary AS Salary,
+    DENSE_RANK() OVER(PARTITION BY D.name ORDER BY E.salary DESC) AS rnk
     FROM Employee E
     JOIN Department D ON E.departmentId = D.id
     ) T
-WHERE T.salary_rank = 1;
+WHERE T.rnk = 1;
