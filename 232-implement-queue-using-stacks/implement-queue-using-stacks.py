@@ -1,4 +1,3 @@
-
 class MyQueue(object):
 
     def __init__(self):
@@ -14,13 +13,13 @@ class MyQueue(object):
 
         while temp:
             self.stack.append(temp.pop())
-
+        
     def pop(self):
         return self.stack.pop()
-
+        
     def peek(self):
         return self.stack[-1]
-
+        
     def empty(self):
         return len(self.stack) == 0
         
