@@ -3,11 +3,11 @@ class Solution(object):
 
         stack = []
 
-        for i in range(len(s)):
-            if stack and stack[-1] != s[i]:
-                if stack[-1].lower() == s[i].lower():
+        for ele in s:
+            if stack and stack[-1] != ele:
+                if stack[-1].lower() == ele.lower():
                     stack.pop()
                     continue
-            stack.append(s[i])  
+            stack.append(ele)  
 
         return ''.join(stack)
