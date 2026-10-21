@@ -1,20 +1,20 @@
 class Solution(object):
     def backspaceCompare(self, s, t):
-        stack_s = []
-        stack_t = []
-        
+        s_stack = []
+        t_stack = []
+
         for ele in s:
             if ele == '#':
-                if stack_s: 
-                    stack_s.pop()
+                if s_stack:
+                    s_stack.pop()
             else:
-                stack_s.append(ele)
+                s_stack.append(ele)
         
         for ele in t:
             if ele == '#':
-                if stack_t: 
-                    stack_t.pop()
+                if t_stack:
+                    t_stack.pop()
             else:
-                stack_t.append(ele)
+                t_stack.append(ele)
 
-        return stack_s == stack_t
+        return s_stack == t_stack
