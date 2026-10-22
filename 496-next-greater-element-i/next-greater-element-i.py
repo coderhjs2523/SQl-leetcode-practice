@@ -7,20 +7,13 @@ class Solution(object):
 
             while stack and nums2[i] >= stack[-1]:
                 stack.pop()
+
             if not stack:
                 map[nums2[i]] = -1
             else:
                 map[nums2[i]] = stack[-1]
 
             stack.append(nums2[i])
-
-            # if not stack or stack[-1] > nums2[i]:
-            #     if not stack:
-            #         map[nums2[i]] = -1
-            #     else:
-            #         map[nums2[i]] = stack[-1]
-            #     stack.append(nums2[i])
-
                
         ans = []
 
