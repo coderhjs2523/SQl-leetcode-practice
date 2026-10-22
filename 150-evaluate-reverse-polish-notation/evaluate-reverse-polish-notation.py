@@ -5,19 +5,20 @@ class Solution(object):
 
         for token in tokens:
             if token in ("+", "-", "*", "/"):
-                b = stack.pop()
                 a = stack.pop()
+                b = stack.pop()
 
                 if token == "+":
-                    result = a + b
+                    result = b + a
                 elif token == "-":
-                    result = a - b
+                    result = b - a
                 elif token == "*":
-                    result = a * b
+                    result = b * a
                 else:
-                    result = abs(a) // abs(b)
-                    if (a < 0) != (b < 0):
-                        result = -result
+                    result = abs(b) // abs(a)
+
+                    if ((a < 0) and (b > 0)) or ((a > 0) and (b < 0)):
+                        result = result * (-1)
 
                 stack.append(result)
             else:
