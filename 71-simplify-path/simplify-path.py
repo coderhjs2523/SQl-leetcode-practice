@@ -1,18 +1,17 @@
 class Solution(object):
-
     def simplifyPath(self, path):
-
-        folders = path.split('/')
+        
+        items = path.split('/')
         stack = []
 
-        for part in folders:
+        for ele in items:
 
-            if part == "" or part == '.':
+            if ele == "" or ele == '.':
                 continue
-            elif part == '..':
+            elif ele == '..':
                 if stack:
                     stack.pop()
             else:
-                stack.append(part)
-
+                stack.append(ele)
+        
         return "/" + "/".join(stack)
