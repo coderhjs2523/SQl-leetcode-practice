@@ -16,19 +16,11 @@ class Solution(object):
                 num = 0
 
             elif ch == ']':
-
-                flag = True
                 temp = ""
 
-                while flag:
-
-                    item = stack_alp.pop()
-
-                    if item == '[':
-                        break
-
-                    temp = item + temp
-
+                while stack_alp[-1] != '[':
+                    temp = stack_alp.pop() + temp
+                stack_alp.pop()
                 stack_alp.append(temp * stack_num.pop())
                 continue
 
