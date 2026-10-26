@@ -34,7 +34,4 @@ class Solution(object):
 
             stack_alp.append(ch)
 
-        if len(stack_alp) > 1:
-            return "".join(stack_alp)
-
-        return stack_alp[-1]
+        return "".join(stack_alp)
