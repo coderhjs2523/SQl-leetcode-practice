@@ -29,6 +29,7 @@
 #         return "".join(stack_alp)
 
 
+
 class Solution(object):
     def decodeString(self, s):
         stack_num = []
@@ -48,9 +49,10 @@ class Solution(object):
                 temp = []
 
                 while stack_alp[-1] != '[':
-                    temp.insert(0,stack_alp.pop())
+                    temp.append(stack_alp.pop())
 
                 stack_alp.pop()
+                temp.reverse()
 
                 stack_alp.append(''.join(temp) * stack_num.pop())
 
