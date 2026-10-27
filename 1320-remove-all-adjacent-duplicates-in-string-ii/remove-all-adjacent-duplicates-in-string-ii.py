@@ -14,12 +14,17 @@ class Solution(object):
 
             if stack and stack[-1][1] == k:
                 stack.pop()
-                continue
 
+        ans = []
 
-        ans = ""
-        while stack:
-            item = stack.pop()
-            ans = item[0] * item[1] + ans
+        for char, count in stack:
+            ans.append(char * count)
 
-        return ans
+        return ''.join(ans)
+        
+        # ans = ""
+        # while stack:
+        #     item = stack.pop()
+        #     ans = item[0] * item[1] + ans
+
+        # return ans
