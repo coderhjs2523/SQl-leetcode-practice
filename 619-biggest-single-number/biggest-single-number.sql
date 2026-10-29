@@ -15,6 +15,5 @@ FROM
     num,
     COUNT(num) OVER(PARTITION BY num) as total_count
     FROM MyNumbers
-    ORDER BY total_count
 ) T
 WHERE T.total_count = 1;
